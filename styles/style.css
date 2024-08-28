@@ -1,0 +1,352 @@
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-dark-green: #34562D;
+  --color-mid-green: #697B43;
+  --color-light-green: #C2C484;
+  --color-dark-purple: #7458A8;
+  --color-mid-purple: #9E8AC4;
+  --color-light-purple: #DCDBDE;
+  --color-beige: #F6F4F0;
+
+  /* Font Size Variables */
+  --size-xxs: 0.625rem; /* 10px */
+  --size-xs: 0.75rem;   /* 12px */
+  --size-s: 0.875rem;    /* 14px */
+  --size-m: 1rem;       /* 16px (base size) */
+  --size-l: 1.25rem;     /* 20px */
+  --size-xl: 1.5rem;    /* 24px */
+  --size-xxl: 2rem;     /* 32px */
+  --size-xxxl: 3rem;    /* 48px */
+}
+
+body {
+  background-color: var(--color-beige);
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Frame Container */
+.frame {
+  position: relative;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Top and Bottom Frames */
+.frame__top, .frame__bottom {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+  position: fixed;
+}
+
+.frame__top {
+  top: -40px;
+}
+
+.frame__bottom {
+  bottom: -70px;
+}
+
+/* Left and Right Frames */
+.frame__left, .frame__right {
+  height: 100%;
+  object-fit: cover;
+  width: 200px;
+  position: fixed;
+}
+
+.frame__left {
+  left: -80px;
+}
+
+.frame__right {
+  top: 20px;
+  right: -120px;
+}
+
+/* Content Container */
+.content {
+  margin-right: 3.5rem;
+  margin-left: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.content__frame {
+  background-color: var(--color-white);
+  height: 25rem;
+  width: 12rem;
+  border-radius: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+h1 {
+  font-size: 33px;
+  font-family: "Great Vibes", cursive;
+  color: var(--color-dark-purple);
+  font-weight: 100;
+  line-height: 60px;
+}
+
+.beautify {
+  font-size: 15px;
+  font-family: "Great Vibes", cursive;
+  color: var(--color-dark-purple);
+  font-weight: 100;
+  line-height: 30px;
+}
+
+.paragraph {
+  color: var(--color-mid-purple);
+  width: 30ch;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+p {
+  font-family: "Arimo", sans-serif;
+  font-size: 8px;
+  text-align: center;
+  color: var(--color-dark-purple);
+}
+
+.date {
+  display: flex;
+  gap: 10px;
+  line-height: 20px;
+  margin-top: 5px;
+  padding-bottom: 15px;
+}
+
+.number {
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+}
+
+.info {
+  border-radius: 28px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: none;
+  background-color: var(--color-light-purple);
+  color: var(--color-dark-purple);
+  width: 13ch;
+  margin-top: 20px;
+  padding: 4px;
+}
+
+.border {
+  border-top: 1px solid var(--color-dark-green);
+  border-bottom: 1px solid var(--color-dark-green);
+}
+
+.form-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  transition: all 500ms ease 0s;
+  padding: 10px;
+}
+
+.form-container {
+  background: var(--color-beige);
+  border-radius: 8px;
+  transition: all 500ms ease-in-out 0s;
+  width: 450px;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: scale(1);
+  transform-origin: 30% 100%;
+  color: var(--color-dark-green);
+  margin: 10px 5px;
+  position: relative;
+  overflow-y: auto;
+  max-height: 80vh;
+  overflow-x: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  
+}
+
+.form__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-beige);
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  border-bottom: 1px solid var(--color-mid-purple);
+  z-index: 10;
+  width: 100%;
+}
+
+.form__top h2 {
+  font-weight: 500;
+  direction: rtl;
+  flex: 2;
+  color: var(--color-dark-green);
+}
+
+.map {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  font-family: "Arimo", sans-serif;
+  font-weight: 500;
+  padding: 2rem;
+  accent-color: var(--color-dark-purple);
+}
+.title{
+  font-weight: 500;
+  font-size: var(--size-l);
+  text-align: center;
+  line-height: 4rem;
+  border-bottom: 1px solid var(--color-light-green);
+}
+
+.form-container input, .form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-light-purple);
+  border-radius: 4px;
+  font-family: "Arimo", sans-serif;
+  font-size: var(--size-m);
+  color: var(--color-dark-purple);
+  background-color: var(--color-white);
+}
+
+.form-container input::placeholder, .form-container textarea::placeholder {
+  color: var(--color-mid-purple);
+}
+
+.form-container textarea {
+  height: 100px; /* Set a fixed height for text areas */
+}
+
+.form-container button {
+  padding: 10px 20px;
+  background-color: var(--color-dark-purple);
+  color: var(--color-beige);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+  background-color: var(--color-mid-purple);
+}
+
+form p {
+  font-size: var(--size-s);
+  text-align: right;
+  line-height: 2rem;
+  color: var(--color-dark-purple);
+}
+
+.form__bottom {
+  position: sticky;
+  bottom: 0;
+  background-color: var(--color-beige);
+  padding: 10px;
+  border-top: 1px solid var(--color-dark-purple);
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container .exit-button {
+  cursor: pointer;
+  font-size: var(--size-l);
+  color: var(--color-dark-purple);
+  font-size: 30px;
+  background: none;
+  border: none;
+
+  top: 10px;
+  right: 10px;
+}
+
+form fieldset {
+  border: 1px solid var(--color-light-purple);
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: var(--color-white);
+}
+
+form fieldset legend {
+
+  font-weight: 500;
+  font-size: var(--size-m);
+  color: var(--color-dark-purple);
+  padding: 0 10px;
+}
+
+form fieldset .radio-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  direction: rtl;
+  padding-left: 10px;
+}
+
+form fieldset .radio-btn label {
+
+  font-size: var(--size-m);
+  color: var(--color-dark-purple);
+  cursor: pointer;
+}
+
+form fieldset .radio-btn input[type="radio"] {
+  accent-color: var(--color-dark-purple);
+
+}
+
+.maps-link {
+  margin: 0 auto;
+  width: 150px;
+  padding: 20px 0;
+  
+  
+}
+.maps-link img { width: 150px; }
+
+
