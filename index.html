@@ -49,7 +49,7 @@
           <p class="title">ساعت و تاریخ مراسم : </p>
           <p>جمعه ۱۶ شهریور ماه ۱۴۰۳ از ساعت ۱۹ تا پاسی از شب</p>
           <p class="title">آدرس باغ:</p>
-          <p> جاده شیراز قلات به سمت شیراز ( حدود یک کیلومتر پایین تر از ورودی قلات  به سمت شیراز ) کوچه باغ جوان (تابلو بزرگ قرمز رنگ باغ جوان سر کوچه هست) اولین فرعی سمت چپ - پارکینگ باغ ژانو </p>
+          <p>جاده شیراز قلات به سمت شیراز ( حدود یک کیلومتر پایین‌تر از ورودی قلات به سمت شیراز ) کوچه باغ جوان (تابلو بزرگ قرمز رنگ باغ جوان سر کوچه هست) اولین فرعی سمت چپ - پارکینگ باغ ژانو</p>
           <p class="title">مسیریابی</p>
           <div class="maps-link">
             <img style="cursor: pointer;" onclick="mapsSelector()" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/maps-icon.png" />
@@ -64,13 +64,19 @@
           <input type="text" placeholder="نام" name="name" required>
           <p>به رسم یادبود برای عروس و نوشاد پیامی بنویسید.</p>
           <textarea placeholder="پیام" name="message"></textarea>
+          <p>آیا در مراسم ما شرکت خواهید کرد؟</p>
           <fieldset>
-            <legend>آیا در مراسم ما شرکت خواهید کرد؟</legend>
             <div class="radio-btn">
-              <input type="radio" id="radio-yes" name="participation">
-              <label for="radio-yes"> بله</label>
-              <input type="radio" id="radio-no" name="participation">
-              <label for="radio-no"> خیر</label>
+              <div class="radio-btn">
+                <div>
+                  <input type="radio" id="radio-yes" name="participation" value="yes">
+                  <label for="radio-yes">بله</label>
+                </div>
+                <div>
+                  <input type="radio" id="radio-no" name="participation" value="no">
+                  <label for="radio-no">خیر</label>
+                </div>
+              </div>
             </div>
           </fieldset>
           <div class="form__bottom">

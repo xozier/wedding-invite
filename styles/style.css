@@ -47,33 +47,33 @@ body, html {
 .frame__top, .frame__bottom {
   width: 100%;
   object-fit: cover;
-  height: 200px;
+  height: 12rem;
   position: fixed;
 }
 
 .frame__top {
-  top: -40px;
+  top: -4rem;
 }
 
 .frame__bottom {
-  bottom: -70px;
+  bottom: -4rem;
 }
 
 /* Left and Right Frames */
 .frame__left, .frame__right {
   height: 100%;
   object-fit: cover;
-  width: 200px;
+  width: 12rem;
   position: fixed;
 }
 
 .frame__left {
-  left: -80px;
+  left: -6rem;
 }
 
 .frame__right {
-  top: 20px;
-  right: -120px;
+  top: 2px;
+  right: -7rem;
 }
 
 /* Content Container */
@@ -150,9 +150,9 @@ p {
   text-decoration: none;
   background-color: var(--color-light-purple);
   color: var(--color-dark-purple);
-  width: 13ch;
+  width: 20ch;
   margin-top: 20px;
-  padding: 4px;
+  padding: 0.75rem;
 }
 
 .border {
@@ -259,7 +259,7 @@ form{
 }
 
 .form-container button {
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   background-color: var(--color-dark-purple);
   color: var(--color-beige);
   border: none;
@@ -322,10 +322,22 @@ form fieldset legend {
 
 form fieldset .radio-btn {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   margin-top: 10px;
   direction: rtl;
   padding-left: 10px;
+
+}
+
+
+.radio-btn div {
+  display: flex;
+  align-items: center; /* Ensure the radio button and label are aligned */
+  margin-bottom: 5px; /* Add some space between options */
+  gap: 1rem;
+  justify-content: center;
 }
 
 form fieldset .radio-btn label {
@@ -333,12 +345,14 @@ form fieldset .radio-btn label {
   font-size: var(--size-m);
   color: var(--color-dark-purple);
   cursor: pointer;
+  vertical-align: center;
 }
 
 form fieldset .radio-btn input[type="radio"] {
   accent-color: var(--color-dark-purple);
-
+  margin-bottom: 0;
 }
+
 
 .maps-link {
   margin: 0 auto;
