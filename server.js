@@ -1,25 +1,5 @@
-import express from 'express';
-import nodemailer from 'nodemailer';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const app = express();
-const PORT = process.env.PORT || 5003;
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-app.use(express.static('public'));
-app.use(express.json());
-
-// Serve the index.html file
-app.get('/', (req, res) => {
-    res.sendFile(join(__dirname, 'public/index.html'));
-});
-
-// Define the /api/sendEmail route
 app.post('/api/sendEmail', (req, res) => {
-    const { name, message } = req.body;
+    const { name, message, participation } = req.body; // Add participation to the destructured object
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -33,7 +13,7 @@ app.post('/api/sendEmail', (req, res) => {
         from: name,
         to: 'weddingmessages1403@gmail.com',
         subject: `Message from ${name}`,
-        text: message
+        text: `Message: ${message}\nParticipation: ${participation}` // Include participation value
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -45,8 +25,4 @@ app.post('/api/sendEmail', (req, res) => {
             res.status(200).json({ message: 'Email sent successfully' });
         }
     });
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
 });

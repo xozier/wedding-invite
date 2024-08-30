@@ -40,8 +40,7 @@
 
 body {
   background-color: var(--color-beige);
-  
-  
+  font-family: "Lalezar", sans-serif;
 }
 
 /* General Reset */
@@ -258,6 +257,7 @@ form{
   accent-color: var(--color-dark-purple);
 }
 .title{
+  font-family: "Lalezar", sans-serif;
   font-weight: 500;
   font-size: var(--size-l);
   text-align: center;
@@ -300,10 +300,12 @@ form{
 }
 
 form p {
+  font-family: "Lalezar", sans-serif;
   font-size: var(--size-s);
   text-align: right;
   line-height: 2rem;
   color: var(--color-dark-purple);
+  letter-spacing: 0.09em;
 }
 
 .form__bottom {
@@ -337,6 +339,7 @@ form fieldset {
   padding: 10px 20px;
   margin-bottom: 20px;
   background-color: var(--color-white);
+  font-family: "Lalezar", sans-serif;
 }
 
 form fieldset legend {
