@@ -1,6 +1,7 @@
+import nodemailer from 'nodemailer'; // Ensure this line is present
+
 export default async function (req, res) {
     if (req.method === 'POST') {
-        // Handle the POST request
         const { name, message } = req.body;
 
         const transporter = nodemailer.createTransport({
@@ -27,7 +28,6 @@ export default async function (req, res) {
             res.status(500).json({ error: 'Failed to send email' });
         }
     } else {
-        // Return 405 if the method is not POST
         res.status(405).json({ error: 'Method Not Allowed' });
     }
 }
