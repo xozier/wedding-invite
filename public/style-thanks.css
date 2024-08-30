@@ -34,8 +34,7 @@
 
   body {
     background-color: var(--color-beige);
-    background-image: url(./background.JPG);
-
+    background-image: url('./background.webp'), url('./background.JPG');
     background-color: var(--color-beige);
     background-size: cover; /* Ensures the image covers the entire element */
     background-position: 47% center; /* Centers the image */
