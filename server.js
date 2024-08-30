@@ -3,30 +3,26 @@ import nodemailer from 'nodemailer';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
-// Create an instance of the express application
 const app = express();
 const PORT = process.env.PORT || 5003;
 
-// Calculate __dirname equivalent
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Middleware setup
 app.use(express.static('public'));
-
-
 app.use(express.json());
 
-// Define routes
+// Serve the index.html file
 app.get('/', (req, res) => {
-    res.sendFile(join(__dirname, 'index.html'));
+    res.sendFile(join(__dirname, 'public/index.html'));
 });
 
-app.post('/', (req, res) => {
-    console.log(req.body);
+// Define the /api/sendEmail route
+app.post('/api/sendEmail', (req, res) => {
+    const { name, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-        service: 'gmail', 
+        service: 'gmail',
         auth: {
             user: 'weddingmessages1403@gmail.com',
             pass: 'xuyh hpse uwll fxdh'
@@ -34,24 +30,23 @@ app.post('/', (req, res) => {
     });
 
     const mailOptions = {
-        from: req.body.name,
+        from: name,
         to: 'weddingmessages1403@gmail.com',
-        subject: `Message from ${req.body.name}`,
-        text: req.body.message // Corrected typo here
+        subject: `Message from ${name}`,
+        text: message
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error);
-            res.send(error);
+            console.error(error);
+            res.status(500).json({ error: 'Failed to send email' });
         } else {
             console.log('Email sent: ' + info.response);
-            res.redirect('/thanks.html');
+            res.status(200).json({ message: 'Email sent successfully' });
         }
     });
 });
 
-// Start the server
 app.listen(PORT, () => {
-    console.log(`Running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

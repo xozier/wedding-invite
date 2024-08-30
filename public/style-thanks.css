@@ -1,0 +1,79 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-dark-green: #34562D;
+    --color-mid-green: #697B43;
+    --color-light-green: #C2C484;
+    --color-dark-purple: #7458A8;
+    --color-mid-purple: #9E8AC4;
+    --color-light-purple: #DCDBDE;
+    --color-beige: #F6F4F0;
+  
+    /* Font Size Variables */
+    --size-xxs: 0.625rem; /* 10px */
+    --size-xs: 0.75rem;   /* 12px */
+    --size-s: 0.875rem;    /* 14px */
+    --size-m: 1rem;       /* 16px (base size) */
+    --size-l: 1.25rem;     /* 20px */
+    --size-xl: 1.5rem;    /* 24px */
+    --size-xxl: 2rem;     /* 32px */
+    --size-xxxl: 3rem;    /* 48px */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+
+  body {
+    background-color: var(--color-beige);
+    background-image: url(./background.JPG);
+
+    background-color: var(--color-beige);
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: 47% center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    font-family: 'Arimo', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: var(--color-white);
+  }
+  
+  .thank-you-message {
+    padding: 2rem;
+    border-radius: 12px;
+  }
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    margin-top: 19rem;
+    font-family: "Great Vibes", cursive;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: #DCDBDE;
+    color: #7458A8;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  .back-link:hover {
+    background-color: #c5c4c8;
+  }
+  
