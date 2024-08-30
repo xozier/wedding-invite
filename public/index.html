@@ -27,9 +27,12 @@
 
     <div class="content">
       <div class="content__frame">
-        <h1>Parmis</h1>
-        <p class="beautify">&</p>
-        <h1>Hosein</h1>
+        <div class="names">
+
+          <h1>Parmis</h1>
+          <p class="beautify">&</p>
+          <h1>Hosein</h1>
+        </div>
         <p class="paragraph">TOGETHER WITH THEIR FAMILIES
           INVITE YOU TO THEIR WEDDING CELEBRATION
         </p>
@@ -60,7 +63,9 @@
           <div class="maps-link">
             <img style="cursor: pointer;" onclick="loadMap()" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/maps-icon.png" loading="lazy" />
           </div>
-          <div class="map" id="map"></div>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1729.1000514403518!2d52.37261467078284!3d29.839397889664767!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fb21fd4ae2d5cc3%3A0xcac912237372578f!2z2pjYp9mG2Yg!5e0!3m2!1sen!2sde!4v1724839536231!5m2!1sen!2sde" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
 
 
           <p>لطفا نام خود را وارد کنید</p>
@@ -119,6 +124,21 @@
       function loadMap() {
         document.getElementById('map').innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1729.1000514403518!2d52.37261467078284!3d29.839397889664767!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fb21fd4ae2d5cc3%3A0xcac912237372578f!2z2pjYp9mG2Yg!5e0!3m2!1sen!2sde!4v1724839536231!5m2!1sen!2sde" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
       }
+    </script>
+    <script>
+      document.getElementById('showForm').addEventListener('click', function(){
+      const overlay = document.querySelector('.form-overlay');
+      overlay.style.display = 'flex'; 
+      overlay.style.opacity = '0'; // Start with 0 opacity for the animation
+      requestAnimationFrame(() => {
+        overlay.style.opacity = '1'; // Trigger the opacity change for the animation
+      });
+    });
+
+    document.querySelector('.exit-button').addEventListener('click', function(){
+      document.querySelector('.form-overlay').style.display = 'none';
+    });
+
     </script>
     
   </body>

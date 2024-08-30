@@ -20,8 +20,28 @@
   --size-xxxl: 3rem;    /* 48px */
 }
 
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Fade-in animation for form overlay */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   background-color: var(--color-beige);
+  
+  
 }
 
 /* General Reset */
@@ -41,6 +61,8 @@ body, html {
   position: relative;
   pointer-events: none;
   z-index: -1;
+  opacity: 0; /* Initially hide the body */
+  animation: fadeInPage 1.5s ease-in-out forwards; /* Apply fade-in animation */
 }
 
 /* Top and Bottom Frames */
@@ -84,6 +106,8 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100%;
+  opacity: 0; /* Initially hide the body */
+  animation: fadeInPage 2.5s ease-in-out forwards; /* Apply fade-in animation */
 }
 
 .content__frame {
@@ -175,6 +199,7 @@ p {
   direction: rtl;
   transition: all 500ms ease 0s;
   padding: 10px;
+  animation: fadeIn 0.5s ease forwards; /* Apply fade-in animation to the overlay */
 }
 
 .form-container {
@@ -227,7 +252,7 @@ p {
 }
 
 form{
-  font-family: "Arimo", sans-serif;
+  font-family: "Lalezar", sans-serif;
   font-weight: 500;
   padding: 2rem;
   accent-color: var(--color-dark-purple);
@@ -246,7 +271,7 @@ form{
   margin-bottom: 10px;
   border: 1px solid var(--color-light-purple);
   border-radius: 4px;
-  font-family: "Arimo", sans-serif;
+  font-family:"Lalezar", sans-serif;
   font-size: var(--size-m);
   color: var(--color-dark-purple);
   background-color: var(--color-white);
@@ -366,3 +391,52 @@ form fieldset .radio-btn input[type="radio"] {
 .maps-link img { width: 150px; }
 
 
+@media (min-width: 768px) {
+  .content__frame {
+    
+    height: 16rem;
+    width: 30rem;
+    padding: 1rem;
+  }
+  
+  
+  .names {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Adjust the gap between the names and the ampersand */
+  }
+  
+  .names h1, .names .beautify {
+    margin: 0; /* Remove default margins */
+  }
+  
+  .names h1 {
+    font-size: var(--size-xxl);
+    font-family: "Great Vibes", cursive;
+    color: var(--color-dark-purple);
+    font-weight: 100;
+  }
+  .beautify{
+    font-size: var(--size-l);
+  }
+  .paragraph {
+    width: 40ch;
+    padding-top: 10px;
+    font-size: .75rem;
+  }
+  
+  
+  .date {
+    display: flex;
+    gap: 1rem;
+    line-height: 30px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+  }
+  
+  .number {
+    font-family: "Great Vibes", cursive;
+    font-size: 3rem;
+  }
+  
+}
