@@ -129,9 +129,9 @@
       document.getElementById('showForm').addEventListener('click', function(){
       const overlay = document.querySelector('.form-overlay');
       overlay.style.display = 'flex'; 
-      overlay.style.opacity = '0'; // Start with 0 opacity for the animation
+      overlay.style.opacity = '0'; 
       requestAnimationFrame(() => {
-        overlay.style.opacity = '1'; // Trigger the opacity change for the animation
+        overlay.style.opacity = '1'; 
       });
     });
 

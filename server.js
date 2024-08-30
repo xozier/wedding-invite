@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
     res.sendFile(join(__dirname, 'public/index.html'));
 });
 
+
 // Define the /api/sendEmail route
 app.post('/api/sendEmail', (req, res) => {
     const { name, message, participation } = req.body;

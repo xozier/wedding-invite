@@ -28,7 +28,7 @@
     opacity: 1;
   }
 }
-/* Fade-in animation for form overlay */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -55,13 +55,12 @@ body, html {
   overflow: hidden;
 }
 
-/* Frame Container */
 .frame {
   position: relative;
   pointer-events: none;
   z-index: -1;
-  opacity: 0; /* Initially hide the body */
-  animation: fadeInPage 1.5s ease-in-out forwards; /* Apply fade-in animation */
+  opacity: 0;
+  animation: fadeInPage 1s ease-in-out forwards;
 }
 
 /* Top and Bottom Frames */
@@ -97,7 +96,6 @@ body, html {
   right: -7rem;
 }
 
-/* Content Container */
 .content {
   margin-right: 3.5rem;
   margin-left: 3.5rem;
@@ -105,9 +103,10 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100%;
-  opacity: 0; /* Initially hide the body */
-  animation: fadeInPage 2.5s ease-in-out forwards; /* Apply fade-in animation */
+  opacity: 0;
+  animation: fadeInPage 2.5s ease-in-out forwards; 
 }
+
 
 .content__frame {
   background-color: var(--color-white);
@@ -118,7 +117,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 h1 {
@@ -198,7 +197,7 @@ p {
   direction: rtl;
   transition: all 500ms ease 0s;
   padding: 10px;
-  animation: fadeIn 0.5s ease forwards; /* Apply fade-in animation to the overlay */
+  animation: fadeIn 1s ease forwards; 
 }
 
 .form-container {
@@ -219,7 +218,7 @@ p {
   overflow-y: auto;
   max-height: 80vh;
   overflow-x: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   
 }
 
@@ -282,7 +281,7 @@ form{
 }
 
 .form-container textarea {
-  height: 100px; /* Set a fixed height for text areas */
+  height: 100px; 
 }
 
 .form-container button {
@@ -362,10 +361,10 @@ form fieldset .radio-btn {
 }
 
 
-.radio-btn div {
+.radio-btn div{
   display: flex;
-  align-items: center; /* Ensure the radio button and label are aligned */
-  margin-bottom: 5px; /* Add some space between options */
+  align-items: center; 
+  margin-bottom: 5px; 
   gap: 1rem;
   justify-content: center;
 }
@@ -406,11 +405,11 @@ form fieldset .radio-btn input[type="radio"] {
   .names {
     display: flex;
     align-items: center;
-    gap: 3rem; /* Adjust the gap between the names and the ampersand */
+    gap: 3rem; 
   }
   
   .names h1, .names .beautify {
-    margin: 0; /* Remove default margins */
+    margin: 0; 
   }
   
   .names h1 {

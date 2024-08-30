@@ -31,13 +31,13 @@ let message = document.getElementById('message');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Get the selected radio button
+    
     let participation = document.querySelector('input[name="participation"]:checked');
 
-    // Check if a radio button is selected
+    
     if (!participation) {
         alert("لطفا انتخاب کنید که آیا در مراسم شرکت خواهید کرد.");
-        return; // Exit the function if no radio button is selected
+        return;
     }
 
     let FormData = {
@@ -47,7 +47,7 @@ contactForm.addEventListener('submit', (e) => {
     };
 
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api/sendEmail'); // Ensure this matches the route in server.js
+    xhr.open('POST', '/api/sendEmail'); 
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
         if (xhr.status === 200) {
