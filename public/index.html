@@ -3,22 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="/top.png" as="image">
+    <link rel="preload" href="/bottom.png" as="image">
+    <link rel="preload" href="/left.png" as="image">
+    <link rel="preload" href="/right.png" as="image">
+
     <link rel="stylesheet" href="modern-normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <title>Wedding Invite</title>
   </head>
   <body>
     <div class="frame">
-      <img src="/top.png" alt="Top Frame" class="frame__top">
-      <img src="/bottom.png" alt="Bottom Frame" class="frame__bottom">
-      <img src="/left.png" alt="Left Frame" class="frame__left">
-      <img src="/right.png" alt="Right Frame" class="frame__right">
+      <img src="/top.png" alt="Top Frame" class="frame__top" loading="lazy">
+      <img src="/bottom.png" alt="Bottom Frame" class="frame__bottom" loading="lazy">
+      <img src="/left.png" alt="Left Frame" class="frame__left" loading="lazy">
+      <img src="/right.png" alt="Right Frame" class="frame__right" loading="lazy">
     </div>
 
     <div class="content">
@@ -54,12 +58,9 @@
           <p>جاده شیراز قلات به سمت شیراز ( حدود یک کیلومتر پایین‌تر از ورودی قلات به سمت شیراز ) کوچه باغ جوان (تابلو بزرگ قرمز رنگ باغ جوان سر کوچه هست) اولین فرعی سمت چپ - پارکینگ باغ ژانو</p>
           <p class="title">مسیریابی</p>
           <div class="maps-link">
-            <img style="cursor: pointer;" onclick="mapsSelector()" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/maps-icon.png" />
+            <img style="cursor: pointer;" onclick="loadMap()" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/maps-icon.png" loading="lazy" />
           </div>
-          <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1729.1000514403518!2d52.37261467078284!3d29.839397889664767!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fb21fd4ae2d5cc3%3A0xcac912237372578f!2z2pjYp9mG2Yg!5e0!3m2!1sen!2sde!4v1724839536231!5m2!1sen!2sde" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
-          </div>
+          <div class="map" id="map"></div>
 
 
           <p>لطفا نام خود را وارد کنید</p>
@@ -90,7 +91,7 @@
     </div>
     
     <!-- <script  src="/main.js"></script> -->
-    <script src="/app.js" type="module"></script>
+    <script async src="/app.js" type="module"></script>
 
 
     <script>
@@ -114,7 +115,11 @@
         window.open("https://maps.google.com/maps?daddr=29.83986307572854, 52.372734301083206&amp;ll=");
       }
     </script>
-
+    <script>
+      function loadMap() {
+        document.getElementById('map').innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1729.1000514403518!2d52.37261467078284!3d29.839397889664767!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fb21fd4ae2d5cc3%3A0xcac912237372578f!2z2pjYp9mG2Yg!5e0!3m2!1sen!2sde!4v1724839536231!5m2!1sen!2sde" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+      }
+    </script>
     
   </body>
 </html>
