@@ -14,6 +14,7 @@ const __dirname = dirname(__filename);
 // Middleware setup
 app.use(express.static('public'));
 
+
 app.use(express.json());
 
 // Define routes
